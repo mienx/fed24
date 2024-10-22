@@ -1,0 +1,461 @@
+/**************/
+/* CSS REMEDY */
+/**************/
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+
+}
+
+
+
+
+
+
+/*********************/
+/* CUSTOM PROPERTIES */
+/*********************/
+:root {
+	/* startje */
+	--color-text: #000;
+	/* --color-text: light-dark (black, white); */
+	--color-background: light-dark (black, white);
+	--kleuren-van-de-headings: light-dark (black, white);
+	--kleuren-in-de-plaatjes: light-dark (black, white);
+	--achtergrond-kleur: light-dark (black, white);
+	--kleur-van-het-menu: grey;
+	--kleur-in-de-plaatjes: white;
+	--kleur-van-de-achter-grond: #F8F8FF;
+	--kleuren-van-de-header: #FFFAFA;
+	--kleur-van-text-in-footer: #C0C0C0;
+
+	color-scheme: light dark;
+}
+
+
+
+@font-face {
+	font-family: 'Logo';
+	src: url(/font/Savinder\ Regular.ttf);
+}
+
+
+@font-face {
+	font-family: 'lettertype';
+	src: url(/font/Century\ Gothic.ttf);
+}
+
+
+body {
+	font-family: "lettertype";
+	/* overflow-x: hidden; */
+	/* BAH */
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	min-height: 100vh;
+	background-color: var(--kleur-van-de-achter-grond);
+}
+
+/* Begin van je header Mines!! */
+h1 {
+	font-family: "logo";
+	display: flex;
+	margin-left: 3.9em;
+	margin-right: 2em;
+	font-size: 1.5em;
+
+}
+
+a {
+
+	color: var(--color-text);
+
+}
+
+
+header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 1rem;
+	list-style: none;
+}
+
+header button:nth-of-type(2) {
+	z-index: 9;
+}
+
+
+ul {
+	display: flex;
+	gap: 0.5em;
+	list-style: none;
+
+}
+
+
+
+ul li a {
+	text-decoration: none;
+
+
+}
+
+/* Einde van je header Mines!!  */
+
+
+
+/* het menu wat uitklapt als je op de X drukt */
+nav {
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	padding: 1em;
+	z-index: 3;
+
+	/* van de rechterkant  */
+	translate: -100%;
+
+	/*  hoelang die moet duren  */
+	transition: 1s;
+
+}
+
+/* wanneer de ul opent  */
+nav ul {
+	padding: 1em;
+	background-color: var(--kleuren-van-de-header);
+	flex-direction: column;
+	gap: 1em;
+	display: flex;
+	height: 100%;
+	position: relative;
+
+
+}
+
+
+nav button {
+	align-self: start;
+
+
+}
+
+
+nav.toonMenu {
+	translate: 0;
+	border: none;
+	background-color: transparent;
+
+}
+
+button {
+	border: none;
+	background-color: transparent;
+}
+
+nav ul a {
+	display: flex;
+	justify-content: space-between;
+	border-top: solid 0.5px var(--color-text);
+}
+ 
+nav ul a svg {
+	fill:var(--color-text);
+	width:1.5em;
+	height:1.5em;
+
+	
+}
+
+
+/* begin van de main  */
+
+/* eerste sectie */
+video {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+
+
+main>section h2 {
+	margin-top: 2em;
+}
+
+
+main>section p {
+	margin-top: 1em;
+}
+
+main>section:first-of-type {
+	text-align: center;
+	font-size: 0.8em;
+	width: 100%;
+}
+
+
+
+/* eerste sectie */
+
+/* tweede sectie */
+
+main section:nth-of-type(2) {
+	position: relative;
+	text-align: center;
+}
+
+main section:nth-of-type(2) img {
+	width: 100%;
+	height: 30em;
+
+}
+
+main section:nth-of-type(2) h2 {
+	position: absolute;
+	font-size: 1em;
+	bottom: 1em;
+	left: 1em;
+	color: var(--kleur-in-de-plaatjes);
+
+
+}
+
+
+
+/* derde sectie */
+
+main section:nth-of-type(3) {
+	position: relative;
+	text-align: center;
+}
+
+main section:nth-of-type(3) img {
+	width: 100%;
+	height: 30em;
+
+
+}
+
+main section:nth-of-type(3) h2 {
+	position: absolute;
+	font-size: 1em;
+	bottom: 1em;
+	left: 1em;
+	color: var(--color-text);
+
+
+}
+
+
+main section:nth-of-type(4) ul {
+	top: 2em;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	grid-column-gap: 2px;
+	grid-row-gap: 2px;
+	position: relative;
+
+}
+
+main section:nth-of-type(5) {
+	margin-top: 2.5rem;
+}
+
+main section:nth-of-type(5) ul {
+	width: 100%;
+	overflow-x: auto;
+	padding: 0;
+	gap: 2rem;
+	scroll-snap-type: x mandatory;
+}
+
+main section:nth-of-type(5) ul li {
+	width: 100%;
+	height: 50%;
+	scroll-snap-align: start;
+	display: grid;
+	/* grid-template-columns: repeat(1, 1fr); */
+	/* grid-template-rows: repeat(1, 1fr); */
+}
+
+main section:nth-of-type(5) ul li img {
+	width: 400px;
+	height: 400px;
+	object-fit: cover;
+	grid-column: 1;
+	grid-row: 1;
+}
+
+main section:nth-of-type(5) ul li h3 {
+	grid-column: 1;
+	grid-row: 1;
+	text-align: center;
+	padding: 1rem;
+	z-index: 4;
+}
+
+
+main ul img {
+	width: 100%;
+}
+
+
+@media (width > 32em) {
+	main>section:nth-of-type(4) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+main ul:nth-of-type(2) {
+	display: flex;
+	overflow-y: scroll;
+	width: 100%;
+	gap: 3rem;
+	margin: 0;
+	padding: 0;
+	/* margin-left: 1em;
+    margin-top: 2em; */
+	scroll-snap-type: x mandatory;
+
+}
+
+main ul:nth-of-type(2) img {
+	width: 300px;
+
+}
+
+
+main ul:nth-of-type(2) img {
+	overflow-clip-margin: content-box;
+	overflow: clip;
+}
+
+
+/* hier begint de footer  */
+
+footer {
+	padding: 2rem;
+}
+
+footer section ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0 0 2rem 0;
+	display: flex;
+	flex-direction: column;
+}
+
+footer section ul li {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 1rem;
+	/* border-top: solid 1px pink; */
+	padding-top: 1em;
+}
+
+footer section ul li+li {
+	border-top: solid 1px var(--color-text);
+}
+
+footer form {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	max-width: 400px;
+	margin-top: 2em;
+}
+
+footer form label {
+	font-weight: bold;
+}
+
+
+footer form input {
+	padding: 0.7rem;
+	border: 1px solid var(--kleur-in-de-plaatjes);
+	border-radius: 4px;
+
+
+}
+
+footer form button {
+	padding: 0.75rem;
+	background-color: var(--color-text);
+	color: var(--kleur-van-de-achter-grond);
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+
+footer p {
+	margin-top: 1em;
+	color: var(--kleur-van-text-in-footer);
+}
+
+
+/* tweede deel footer  */
+
+footer section:nth-of-type(3) {
+
+	padding-top: 2em;
+	cursor: pointer;
+}
+
+footer h3{
+font-size: 1em;
+
+}
+
+footer section:nth-of-type(3) p{
+	font-size: 0.8em;
+	
+}
+
+footer section:nth-of-type(4) {
+
+	padding-top: 2em;
+	cursor: pointer;
+}
+
+footer h3{
+font-size: 1em;
+}
+
+footer section:nth-of-type(4) p{
+	font-size: 0.8em;
+	
+}
+
+footer section:nth-of-type(5) {
+
+	padding-top: 2em;
+	cursor: pointer;
+}
+
+footer h3{
+font-size: 1em;
+}
+
+footer section:nth-of-type(5) p{
+	font-size: 0.8em;
+	
+}
+
+footer p:hover{
+	color: var(--color-text);
+	transition: var(--color-text) 0.3 ease;
+}
